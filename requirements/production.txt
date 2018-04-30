@@ -1,0 +1,4 @@
+Django==2.0.4
+sorl-thumbnail==12.4.1
+django-post-office==3.0.4
+Pillow==5.1.0

@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Sublime Text
+*.sublime-*
+
+# Mac OS
+*.DS_Store
