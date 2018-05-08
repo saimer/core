@@ -105,3 +105,6 @@ ENV/
 
 # Mac OS
 *.DS_Store
+
+# Ignore media folder
+/public/media/*

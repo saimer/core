@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     # project apps
     'cores.apps.CoresConfig',
+    'auths.apps.AuthsConfig',
 ]
 
 MIDDLEWARE = [
@@ -150,6 +151,11 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(CORE_DIR, 'public/media')
 
 MEDIA_URL = '/media/'
+
+
+# https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-AUTH_USER_MODEL
+
+AUTH_USER_MODEL = 'auths.User'
 
 
 # https://docs.djangoproject.com/en/2.0/ref/settings/#admins

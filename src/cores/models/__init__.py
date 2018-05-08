@@ -1,7 +1,6 @@
-from .abstract import AbstractTimeStampedModel, AbstractBasicProfileModel
+from .abstract import AbstractTimeStampedModel
 
 
 __all__ = [
     'AbstractTimeStampedModel',
-    'AbstractBasicProfileModel',
 ]
