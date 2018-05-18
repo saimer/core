@@ -1,0 +1,27 @@
+<div class="row">
+    {% if thumb_img %}
+        <div class="col-xs-12">
+            <a data-fancybox="gallery" href="{{ widget.value.url }}">
+                <img src="{{ thumb_img.url }}" class="img-thumbnail">
+            </a>
+        </div>
+    {% endif %}
+    <div class="col-xs-12" style="margin-top: 5px;">
+        {% if widget.is_initial %}
+                <strong>{{ widget.initial_text }}:</strong>
+                {% if not thumb_img %}<a data-fancybox="gallery" href="{{ widget.value.url }}">{% endif %}
+                    {{ filename }}
+                {% if not thumb_img %}</a>{% endif %}
+            </div>
+            <div class="col-xs-12">
+                {% if not widget.required %}
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                        <label for="{{ widget.checkbox_id }}">
+                            <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}" /> {{ widget.clear_checkbox_label }}
+                        </label>
+                    </div>
+                {% endif %}
+        {% endif %}
+        <input type="{{ widget.type }}" name="{{ widget.name }}"{% for name, value in widget.attrs.items %}{% if value is not False %} {{ name }}{% if value is not True %}="{{ value|stringformat:'s' }}"{% endif %}{% endif %}{% endfor %} />
+    </div>
+</div>

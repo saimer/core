@@ -56,7 +56,7 @@ class CoreImageWidget(forms.ClearableFileInput):
     a link to the current one if it hase one.
     """
     clear_checkbox_label = gettext_lazy('Remove this file')
-    template_name = 'wanpow/widgets/clearable_file_input.html'
+    template_name = 'cores/widgets/clearable_file_input.html'
 
     def render(self, name, value, attrs=None):
         context = self.get_context(name, value, attrs)

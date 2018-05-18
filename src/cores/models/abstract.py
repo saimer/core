@@ -52,7 +52,13 @@ class AbstractTimeStampedModel(models.Model):
                 ))
             )
         else:
-            return '-'
+            return format_html(
+                mark_safe("{}".format(
+                    localtime(self.created).strftime(
+                        "%Y-%m-%d<br /> %I:%M %p"
+                    )
+                ))
+            )
 
     admin_created.admin_order_field = 'created'
     admin_created.short_description = 'Created'
