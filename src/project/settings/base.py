@@ -13,20 +13,33 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(SRC_DIR, ...)
+
 SRC_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__)
 )))
 CORE_DIR = os.path.dirname(SRC_DIR)
+
+
+# Project code name
+
 PROJECT_NAME = 'Snapdec'
+
+
+# Software version
+
+VERSION = '1.0.0'
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = '@=s#sdac@3p03ktjwikbo&+qo^e@mhg4(=j3-)ttxc=+3$0&99'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -153,11 +166,6 @@ MEDIA_ROOT = os.path.join(CORE_DIR, 'public/media')
 MEDIA_URL = '/media/'
 
 
-# https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-AUTH_USER_MODEL
-
-AUTH_USER_MODEL = 'auths.User'
-
-
 # https://docs.djangoproject.com/en/2.0/ref/settings/#admins
 
 ADMINS = [
@@ -167,7 +175,7 @@ ADMINS = [
 
 # https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-AUTH_USER_MODEL
 
-# AUTH_USER_MODEL = 'auths.User'
+AUTH_USER_MODEL = 'auths.User'
 
 
 # https://docs.djangoproject.com/en/2.0/ref/settings/#login-redirect-url
@@ -186,10 +194,6 @@ EMAIL_HOST_PASSWORD = 'systempass'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_SUBJECT_PREFIX = '[Snapdec] '
-
-
-# Software version
-VERSION = '1.0.0'
 
 
 # Logging settings
