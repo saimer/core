@@ -16,7 +16,7 @@ class RequestFormKwargsMixin(object):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        if hasattr('self', 'request'):
+        if hasattr(self, 'request'):
             # Update the existing form kwargs dict with the request's user.
             kwargs.update({"request": self.request})
         return kwargs
