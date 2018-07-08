@@ -79,7 +79,7 @@ class CoreImageWidget(forms.ClearableFileInput):
                 try:
                     mini = get_thumbnail(value, 'x100', upscale=False, format=ext)
                 except Exception as e:
-                    logger.warn("Unable to get the thumbnail", exc_info=e)
+                    logger.warning("Unable to get the thumbnail", exc_info=e)
                 else:
                     context['thumb_img'] = mini
                     context['filename'] = os.path.basename(value.name)
