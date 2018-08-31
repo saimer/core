@@ -111,3 +111,6 @@ ENV/
 
 # Ignore sqlite
 *.sqlite3
+
+# Ignore local settings
+/src/project/settings/local.py
