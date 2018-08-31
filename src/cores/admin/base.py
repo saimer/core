@@ -1,11 +1,13 @@
 from django.contrib import admin
 
+from ..models import EMPTY_VALUE_DISPLAY
+
 
 class CoreAdmin(admin.ModelAdmin):
     """
     Use to override all admin to include created and modified.
     """
-    empty_value_display = '---'
+    empty_value_display = EMPTY_VALUE_DISPLAY
     exclude = ['created_by', 'modified_by', ]
 
     def get_list_display(self, request):
@@ -46,3 +48,7 @@ class CoreAdmin(admin.ModelAdmin):
                 instance.modified_by = request.user
             instance.save()
         formset.save_m2m()
+
+
+class CoreTabularInline(admin.TabularInline):
+    readonly_fields = ['created_by', 'created', 'modified_by', 'modified', ]

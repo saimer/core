@@ -89,6 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'project.context_processors.project_name',
             ],
         },
     },
@@ -103,7 +104,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(SRC_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(SRC_DIR, '{}.sqlite3'.format(PROJECT_NAME.lower())),
     }
 }
 
@@ -183,6 +184,13 @@ AUTH_USER_MODEL = 'auths.User'
 LOGIN_REDIRECT_URL = '/'
 
 
+# https://docs.djangoproject.com/en/2.0/ref/settings/#fixture-dirs
+
+FIXTURE_DIRS = [
+    os.path.join(CORE_DIR, 'fixtures'),
+]
+
+
 # Email settings
 
 EMAIL_BACKEND = 'post_office.EmailBackend'
@@ -190,7 +198,7 @@ SERVER_EMAIL = 'system@snapdec.com'
 DEFAULT_FROM_EMAIL = 'system@snapdec.com'
 EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_HOST_USER = 'snapdec_system'
-EMAIL_HOST_PASSWORD = 'systempass'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_SUBJECT_PREFIX = '[Snapdec] '

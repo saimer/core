@@ -108,3 +108,6 @@ ENV/
 
 # Ignore media folder
 /public/media/*
+
+# Ignore sqlite
+*.sqlite3

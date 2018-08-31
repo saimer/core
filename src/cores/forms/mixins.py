@@ -1,6 +1,7 @@
 from sorl.thumbnail.fields import ImageFormField
 
 from django import forms
+from django.utils.formats import get_format
 
 from ..widgets import CoreImageWidget
 
@@ -34,6 +35,8 @@ class FormMixin(object):
             # For Datepicker
             if isinstance(field, forms.DateField) and not custom_class:
                 field.widget.attrs['class'] = 'form-control core-datepicker'
+                field.widget.attrs['data-date-format'] = \
+                    get_format('JS_DATE_INPUT_FORMATS')
 
             # For Select2
             if (
