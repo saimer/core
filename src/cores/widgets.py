@@ -19,7 +19,7 @@ class CoreAdminImageWidget(forms.ClearableFileInput):
     image as well as a link to the current one if it hase one.
     """
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         output = super().render(name, value, attrs)
 
         if value and hasattr(value, 'url'):
@@ -58,7 +58,7 @@ class CoreImageWidget(forms.ClearableFileInput):
     clear_checkbox_label = gettext_lazy('Remove this file')
     template_name = 'cores/widgets/clearable_file_input.html'
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         context = self.get_context(name, value, attrs)
 
         if value and hasattr(value, 'url'):
